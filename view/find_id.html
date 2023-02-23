@@ -1,0 +1,110 @@
+  <%-include("./partial/header_up.html")%>
+
+   <!-- @@@@@@@@@ CSS 파일 START @@@@@@@@@-->
+    <link rel="stylesheet" href="/css/common.css" type="text/css" />
+    <link rel="stylesheet" href="/css/signup.css" type="text/css" />
+    <link rel="stylesheet" href="/css/chat_ui.css" />
+    <link rel="stylesheet" href="/css/find_pw.css">
+    <!-- @@@@@@@@@ CSS 파일 END @@@@@@@@@-->
+
+    <%-include("./partial/header_down.html")%>
+    
+    <div class="site-container">
+      <div class="section pattern">
+        <div class="container">
+          <div class="modal-wrapper login-box">
+            <div class="modal-header">
+              <div class="button-circles-wrap">
+                <div class="button-circle"></div>
+                <div class="button-circle"></div>
+              </div>
+              <div>Find ID</div>
+            </div>
+            <div class="modal-body">
+              <div class="container-width-medium">
+                <div class="center-box">                   
+                    <div class="join-main">
+                      <!-- 이따 여기 메인 -->
+                      <h3 style="font-family:NanumSquareRound-B; margin-bottom: 15px;" >아이디를 찾기 위한 이메일을 입력 해주세요</h3>
+                    <div class="email-div">
+                      <input type="text" placeholder="e-mail" id="user_email" onkeyup="emailCheck(this.value)" />
+                      <input type="hidden" id="is_email_check" >
+                      <button class="check-email" onclick="findIdEmailSend()">메일 보내기</button>
+                    </div>
+                    <span id="email_check" class="check"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-section wf-section">
+        <div class="container">
+          <div class="footer">
+            <div>©2020 Company Name. All rights reserved. Made by 22Lim</div>
+          </div>
+        </div>
+      </div>
+      <!-- ----------------------------------button 부분------------------------------------ -->
+    
+      <!-- ----------------------------------button end------------------------------------ -->
+  
+    </div>
+    <script src="/js/check_password.js"></script>
+    <script src="/js/chat_ui.js"></script>
+    <!-- <script src="/js/validity.js"></script> -->
+    
+    <script
+      src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5e87e737ee7085b9ba02c101"
+      type="text/javascript"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    <script
+      src="https://assets.website-files.com/5e87e737ee7085b9ba02c101/js/webflow.be692164d.js"
+      type="text/javascript"></script>
+    <!--[if lte IE 9
+      ]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script
+    ><![endif]-->
+  </body>
+  <script>
+    function findIdEmailSend(){
+      // if(!findIdEmailCheck()) return;
+      $.ajax({
+        url: "/user/find_id",
+        type: "post",
+        data : {
+          userEmail : user_email.value,
+        },
+        success : (data)=>{
+          if(data == "suc"){
+            alert("이메일이 발송 되었습니다.");
+            location.href = "/user/login";
+          }else if(data == "fail"){
+            alert("가입하지 않은 이메일 입니다.");
+          }else alert("알 수 없는 오류");
+        }
+      })
+    }
+
+    // 이메일 정규식
+    function emailCheck(email) {
+      const emailRegex =
+        /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/g;
+      if (emailRegex.test(email) == false) {
+        email_check.innerHTML = "이메일을 확인해주세요";
+        return false;
+      } else {
+        if (is_email_check.value) {
+          email_check.innerHTML = "";
+          mail_btn.disabled = true;
+          return true;
+        } else {
+          email_check.innerHTML = "";
+          mail_btn.disabled = false;
+          return true;
+        }
+      }
+    }
+  </script>
+</html>
