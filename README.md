@@ -39,6 +39,12 @@ Node.js , MySql활용능력개선
 <img src="https://img.shields.io/badge/JSONWebTokens-2D3748?style=for-the-badge&logo=JSONWebTokens&logoColor=white">
 </span>
 
+<h4>- Tool</h4>
+<span>
+<img src="https://img.shields.io/badge/github.io-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white">
+</span>
+
 # 페이지 (Front)
 ![image](https://user-images.githubusercontent.com/106497516/225777943-5634f328-77a5-4781-b7a0-e5fb8f6096d9.png)
 ![image](https://user-images.githubusercontent.com/106497516/225778157-a7983536-0ce8-4d56-9a5f-303e9c888aa5.png)
