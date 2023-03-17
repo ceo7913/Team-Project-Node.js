@@ -39,7 +39,7 @@ Node.js , MySql활용능력개선
 <img src="https://img.shields.io/badge/JSONWebTokens-2D3748?style=for-the-badge&logo=JSONWebTokens&logoColor=white">
 </span>
 
-<h4>- Tool</h4>
+<h4>- Collaboration Tool</h4>
 <span>
 <img src="https://img.shields.io/badge/github.io-181717?style=for-the-badge&logo=github&logoColor=white">
 <img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white">
