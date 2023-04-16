@@ -28,6 +28,11 @@ Node-Project(team)
 
 - 기획과 문서 작성부터 개발, 형상관리, 테스트까지 개발 프로세스 전반을 경험한다
 
+## 이슈 및 배운점
+> [로그인 페이지에서 아이디 조회 기록이 전송되지 않는 이슈] (https://github.com/ceo7913/Team_Node.js-Project/issues/1)
+
+> [댓글은 삭제 했지만 대댓글이 남아있는 이슈] (https://github.com/ceo7913/Team_Node.js-Project/issues/2)
+
 ## 사용한 스택
 <h4>- FRONT</h4>
 <span>
